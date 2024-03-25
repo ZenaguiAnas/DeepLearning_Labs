@@ -1,61 +1,44 @@
-# Lab 1 Report
+# Lab Report: Computer Vision with PyTorch
 
-## Objective:
-The primary objective of this lab is to gain proficiency in using the PyTorch library for both Classification and Regression tasks, employing Deep Neural Network (DNN) and Multi-Layer Perceptron (MLP) architectures.
+## Introduction
+Computer vision, a subfield of artificial intelligence, focuses on enabling machines to interpret and understand visual information from the world. In this lab, we explore various computer vision techniques using the PyTorch library, a powerful open-source machine learning framework. The lab is divided into two parts, each addressing different aspects of computer vision tasks.
 
-## Part One: Regression
-### Dataset:
-- [NYSE Stock Prices](https://www.kaggle.com/datasets/dgawlik/nyse)
+## Part 1: CNN Classifier
+### Objective
+The objective of Part 1 is to build, train, and evaluate different neural network architectures, specifically Convolutional Neural Networks (CNNs) and Faster R-CNN, for image classification tasks using the MNIST dataset. We aim to understand the principles behind these architectures and compare their performance on the classification task.
 
-### Work Completed:
-1. **Exploratory Data Analysis (EDA):**
-    - Performed in-depth EDA techniques to understand and visualize the dataset, gaining insights into key features and distributions.
+### Implementation
+1. **CNN Architecture**: We implemented a CNN architecture using PyTorch, leveraging its built-in modules such as convolutional layers, pooling layers, and fully connected layers. The architecture was designed to take grayscale images of handwritten digits from the MNIST dataset as input and output the predicted class label for each image.
+   
+2. **Faster R-CNN**: We adapted the Faster R-CNN architecture, a state-of-the-art object detection model, for the image classification task on MNIST. This involved treating each digit as an object and using bounding boxes for classification. While this approach may seem unconventional for MNIST, it provided an interesting comparison with the CNN model.
+   
+3. **Training and Evaluation**: Both CNN and Faster R-CNN models were trained using the training set of the MNIST dataset and evaluated on the test set. We used standard metrics such as accuracy, F1 score, loss, and training time to assess the performance of each model.
 
-2. **Deep Neural Network Architecture:**
-    - Established a DNN architecture using PyTorch for the regression task, incorporating relevant features from the dataset.
+### Results and Analysis
+- **CNN Performance**: The CNN model achieved high accuracy and F1 score on the MNIST dataset, demonstrating its effectiveness for image classification tasks. It showed robust performance and relatively fast convergence during training.
+  
+- **Faster R-CNN Performance**: The adaptation of Faster R-CNN for MNIST classification was unconventional but provided valuable insights into the flexibility of the model architecture. However, the model's performance may have been affected by the mismatch between the model's design and the characteristics of the dataset.
+  
+- **Comparison**: By comparing the results of both models, we observed differences in performance metrics, highlighting the strengths and limitations of each approach. While CNN performed well on the classification task, Faster R-CNN showcased the versatility of object detection models in different scenarios.
 
-3. **Hyperparameter Tuning with GridSearch:**
-    - Utilized GridSearch from the sklearn library to identify the best hyperparameters, such as learning rate, optimizers, epoch, and model architecture, enhancing the efficiency of the model.
+## Part 2: Vision Transformer (ViT)
+### Objective
+The objective of Part 2 is to explore the emerging paradigm of Vision Transformers (ViTs) and apply them to the MNIST classification task. We aim to understand the underlying principles of ViTs and compare their performance with traditional CNN models.
 
-4. **Visualization:**
-    - Plotted two graphs illustrating Loss vs. Epochs and Accuracy vs. Epochs for both training and test data.
-    - Provided interpretations of the trends observed in the visualizations.
+### Implementation
+1. **ViT Model**: Following a tutorial, we implemented a Vision Transformer model from scratch in PyTorch. ViTs represent a novel approach to image classification, relying on self-attention mechanisms to capture global dependencies in the input image. The model architecture included embedding layers, transformer blocks, and a classification head.
+   
+2. **MNIST Classification**: The ViT model was adapted to perform image classification on the MNIST dataset. We adjusted the input size and other parameters to fit the characteristics of the dataset, ensuring compatibility between the model and the task.
 
-5. **Regularization Techniques:**
-    - Applied various regularization techniques to the architecture.
-    - Compared the results obtained with the initial, non-regularized model.
+### Results and Analysis
+- **ViT Performance**: The ViT model demonstrated competitive performance on the MNIST dataset, showcasing the potential of transformer-based architectures for image classification tasks. Despite being a relatively new approach, ViTs showed promising results and offered a fresh perspective on traditional computer vision tasks.
+  
+- **Comparison with CNN**: Comparing the results obtained from ViT with those from CNN models provided valuable insights into the relative strengths and weaknesses of each approach. While CNN models have been the cornerstone of computer vision for many years, ViTs represent a promising alternative that warrants further exploration.
+  
+- **Interpretation**: Analyzing the results allowed us to understand the behavior of ViTs in the context of image classification. We observed similarities and differences in performance metrics compared to CNN models, shedding light on the unique characteristics of ViTs and their potential applications in various domains.
 
-## Part Two: Multi-Class Classification
-### Dataset:
-- [Machine Predictive Maintenance](https://www.kaggle.com/datasets/shivamb/machine-predictive-maintenance-classification)
+## Conclusion
+Through this lab, we gained hands-on experience in building and comparing different neural network architectures for computer vision tasks. We explored traditional CNNs, object detection with Faster R-CNN, and the emerging paradigm of Vision Transformers. By analyzing the results and understanding the nuances of each approach, we are better equipped to tackle real-world computer vision problems and contribute to advancements in the field.
 
-### Work Completed:
-1. **Data Preprocessing:**
-    - Applied preprocessing techniques to clean and standardize/normalize the data.
-    - Encoded categorical variables and ensured the dataset is ready for analysis.
-
-2. **Exploratory Data Analysis (EDA):**
-    - Conducted EDA to comprehend the dataset, highlighting key patterns and characteristics.
-
-3. **Data Augmentation:**
-    - Applied data augmentation techniques to balance the dataset, addressing potential class imbalances.
-
-4. **Deep Neural Network Architecture:**
-    - Established a PyTorch-based DNN architecture to handle the multi-class classification task, considering the unique characteristics of the dataset.
-
-5. **Hyperparameter Tuning with GridSearch:**
-    - Leveraged GridSearch to identify optimal hyperparameters, enhancing model efficiency.
-
-6. **Visualization:**
-    - Visualized Loss vs. Epochs and Accuracy vs. Epochs for both training and test data.
-    - Provided interpretations based on the observed trends.
-
-7. **Metrics Calculation:**
-    - Calculated key metrics such as accuracy, sensitivity, and F1 score on both training and test datasets.
-
-8. **Regularization Techniques:**
-    - Applied various regularization techniques to the architecture.
-    - Compared the results with the initial, non-regularized model.
-
-## Conclusion:
-This comprehensive lab equipped us with valuable hands-on experience in utilizing PyTorch for diverse tasks, emphasizing the importance of exploratory data analysis, hyperparameter tuning, and model evaluation techniques. The comparison of results before and after regularization sheds light on the impact of these techniques on model performance.
+---
+By implementing these models and analyzing their performance, we have deepened our understanding of computer vision techniques and their applications in various domains. This lab serves as a foundation for further exploration and experimentation in the field of computer vision with PyTorch.
